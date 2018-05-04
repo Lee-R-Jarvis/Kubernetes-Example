@@ -26,7 +26,7 @@ spec:
                 name: mysql
                 key: password
           ports:
-            - containerPort: 80
+            - containerPort: 8080
               name: wordpress
           volumeMounts:
             - name: wordpress-persistent-storage
