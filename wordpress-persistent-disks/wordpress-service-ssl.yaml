@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: wordpress-ssl
+    labels: 
+        app: wordpress
+    annotations: 
+        kubernetes.io/ingress.class: "gce"
+        ingress.gcp.kubernetes.io/pre-shared-secret: xampl-ssl
+        kubernetes.io/ingress.global-static-ip-name: xampl-ip-1
+    
+spec:
+    backend:
+        serviceName: wordpress
+        servicePort: 80
+    rules:
+        - host: www.xamplservices.co.uk
